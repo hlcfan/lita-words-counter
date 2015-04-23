@@ -7,7 +7,7 @@ TODO: Add a description of the plugin.
 Add lita-words-counter to your Lita instance's Gemfile:
 
 ``` ruby
-gem "lita-words-counter", github: 'hlcfan/lita-words-counter'
+gem "lita-words-counter"
 ```
 
 
@@ -17,7 +17,11 @@ TODO: Describe any configuration attributes the plugin exposes.
 
 ## Usage
 
-TODO: Describe the plugin's features and how to use them.
+#### show how many words alex said
+`lita count alex`
+
+#### reset words count
+`lita recount`
 
 ## License
 
