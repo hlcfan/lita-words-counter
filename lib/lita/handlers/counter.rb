@@ -8,7 +8,7 @@ module Lita
       route /\Arecount\s?(.*)?\z/i,       :recount,       command: true
 
       def counter response
-        redis.incr(user_key(response.user.name))
+        redis.incr(user_key(response.user.username))
       end
 
       def count response
@@ -18,7 +18,7 @@ module Lita
       def recount response
         keys = redis.keys "user-*"
         redis.del keys if keys.any?
-        response.reply '**recount done!**'
+        response.reply '*recount done!*'
       end
 
       private
