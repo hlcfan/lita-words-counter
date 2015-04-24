@@ -1,4 +1,4 @@
-# lita-words-counter
+# lita-words-counter [![Gem Version](https://badge.fury.io/rb/lita-words-counter.svg)](http://badge.fury.io/rb/lita-words-counter)
 
 TODO: Add a description of the plugin.
 
@@ -19,6 +19,9 @@ TODO: Describe any configuration attributes the plugin exposes.
 
 #### show how many words alex said
 `lita count alex`
+
+#### show top n
+`lita count top n`
 
 #### reset words count
 `lita recount`
