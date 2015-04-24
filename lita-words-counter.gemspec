@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-words-counter"
-  spec.version       = "0.1.0"
+  spec.version       = "0.2.0"
   spec.authors       = ["Alex S"]
   spec.email         = ["hlcfan.yan@gmail.com.com"]
   spec.description   = 'count user words'
