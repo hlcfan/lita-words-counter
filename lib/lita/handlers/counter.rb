@@ -8,11 +8,17 @@ module Lita
       route /\Arecount\s?(.*)?\z/i,       :recount,       command: true
 
       def counter response
-        redis.incr(user_key(response.user.username))
+        redis.incr(user_key(response.user.name))
       end
 
       def count response
-        response.reply(redis.get(user_key(response.matches[0][0])) || '0')
+        username = response.matches[0][0]
+        keys = redis.keys "#{user_key(username)}*"
+        lines = keys.map do |key|
+          "#{unuser_key(key)} said #{redis.get(key)} lines"
+        end.join("\n")
+
+        response.reply lines
       end
 
       def recount response
@@ -23,9 +29,14 @@ module Lita
 
       private
 
-      def user_key user_name
-        "user-#{user_name}"
+      def user_key username
+        "user-#{username}".downcase
       end
+
+      def unuser_key username
+        username.gsub('user-', '')
+      end
+
     end
 
     Lita.register_handler(Counter)

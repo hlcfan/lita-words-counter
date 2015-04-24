@@ -1,10 +1,10 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-words-counter"
-  spec.version       = "0.0.1"
+  spec.version       = "0.1.0"
   spec.authors       = ["Alex S"]
   spec.email         = ["hlcfan.yan@gmail.com.com"]
   spec.description   = 'count user words'
-  spec.summary       = 'count user words'
+  spec.summary       = 'user words counter plugin for lita'
   spec.homepage      = "https://github.com/hlcfan/lita-words-counter"
   spec.license       = "MIT"
   spec.metadata      = { "lita_plugin_type" => "handler" }
