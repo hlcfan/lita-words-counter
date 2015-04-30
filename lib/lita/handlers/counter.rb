@@ -11,6 +11,7 @@ module Lita
       route /^count\s+top\s+(\d+)/,       :list_top,      command: true
 
       def counter response
+        return if response.user.name.delete(' ') == ''
         redis.zincrby REDIS_SET_KEY, 1, user_key(response.user.name)
       end
 
